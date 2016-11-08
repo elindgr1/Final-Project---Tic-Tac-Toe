@@ -37,7 +37,7 @@ The language is Ruby. At the time of writing, Ruby 2.3.1 is the latest stable ve
 
 ### Due date
 
-The assignment is due on **Sun, Dec 4, at 23:59 Mountain time**. The last commit to your _tictactoe_ repository before the deadline will be graded.
+The assignment is due on **Sun, Dec 4, at 23:55 Mountain time**. The last commit to your _tictactoe_ repository before the deadline will be graded.
 
 ### Honor code
 
