@@ -109,7 +109,7 @@ class Board
         end
       end
     end
-    nil
+    return nil
   end
 
   def ask_player_for_move(current_player)
