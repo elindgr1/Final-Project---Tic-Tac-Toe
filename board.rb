@@ -105,7 +105,7 @@ class Board
         if first_symbol != @board[row_index][col_index]
           break
         elsif row_index == BOARD_MAX_INDEX
-          first_symbol
+          return first_symbol
         end
       end
     end
