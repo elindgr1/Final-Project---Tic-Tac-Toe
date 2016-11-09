@@ -3,7 +3,7 @@ require_relative 'board.rb'
 class Game
   PLAYERS = %w{X O}
 
-  def initialize(starting_player
+  def initialize(starting_player)
     # implement
   end
 
