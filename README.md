@@ -59,18 +59,18 @@ You are expected to use [RubyMine](https://www.jetbrains.com/ruby/) to develop t
 
 Implement a 2-player tictactoe game on a 3x3 board drawn in ASCII, where players take turns until the game is won by one of the players or the board is full and the game is a tie.
 
-#### API Functions
+#### Classes and methods
 
 ##### class Board
 
-The Board class represents the 3x3 board and implements all board-related methods in tictactoe. You are given the following two constants which you should use in your code. The first one indicates the largest index on a 3x3 board (remember that Ruby is *0-indexed*). The other is the *representation of an empty position* on the board.
+The Board class represents the 3x3 board and implements all board-related methods in tictactoe. You are given the following two constants which you should use in your code. The first one indicates the largest index on a 3x3 board (remember that Ruby is *0-indexed*). The other is the *representation of an empty position* on the board. The Board is represented internally as a two-dimensional nexted array.
 
 ```ruby
   BOARD_MAX_INDEX = 2
   EMPTY_POS = ' '
 ```
 
-The `initialize` method is used to set up each new Board object. It takes the representation of the `starting_player` as an argument.
+The `initialize` method is used to set up each new `Board` object. It takes the representation of the `starting_player` as an argument. It has __no default__.
 ```ruby
   def initialize(starting_player)
     # implement
@@ -93,7 +93,7 @@ An empty board is drawn as follows
 | 7 | 8 | 9 | 
 +- - - - - -+
 ```
-and a board where the two players (assuming the players are represented as 'O' and 'X') have each taken one turn is draw as follows
+where the numbers are there so players can indicate where they want to move. A board where the two players (assuming the players are represented as 'O' and 'X') have each taken one turn is drawn as follows
 ```
 +- - - - - -+
 | 1 | 2 | O | 
@@ -130,7 +130,7 @@ The `winner` method returns `true` if one of the players has constructed a winni
   end
 ```
 
-The `validate_position` method returns `true` if the position represented by the arguments `row` and `col` is valid for the 3x3 board and `false` otherwise.
+The `validate_position` method returns `true` if the position represented by the arguments `row` and `col` is valid for the 3x3 board and `false` otherwise. A _negative, zero, or empty_ position is __invalid__.
 ```ruby
   def validate_position(row, col)
     # implement
@@ -143,3 +143,36 @@ The `fill_position` method fills the position represented by the arguments `row`
     # implement
   end
 ```
+
+##### class Game
+
+The Game class represents (the playing) of one game of tictactoe, using the Board class for all the board-related methods. It implements all the game-related methods, notably the interaction with the two players. The following constant array represents the players.
+```ruby
+  PLAYERS = %w{X O}
+```
+
+The `initialize` method is used to set up each new `Game` object. It takes the representation of the `starting_player` as an argument. It defaults to the `'O'` player.
+```ruby
+  def initialize(starting_player)
+    # implement
+  end
+```
+
+The `play` method does all the work of playing one game of tictactoe. It should open the game with `'Starting tic-tac-toe...'`. It should ask the current player where to play. It should conclude the game with `'Player [player] wins.'` a
+
+```ruby
+  def play
+    # implement
+  end
+```
+```ruby
+  def ask_player_for_move
+    # implement
+  end
+```
+```ruby
+  def next_player
+    # implement
+  end
+```
+
