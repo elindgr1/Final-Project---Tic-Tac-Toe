@@ -63,31 +63,56 @@ Implement a 2-player tictactoe game on a 3x3 board drawn in ASCII, where players
 
 ##### class Board
 
-The Board class represents the 3x3 board and implements all board-related methods in tictactoe. You are given the following two constants which you should use in your code.
+The Board class represents the 3x3 board and implements all board-related methods in tictactoe. You are given the following two constants which you should use in your code. The first one indicates the largest index on a 3x3 board (remember that Ruby is *0-indexed*). The other is the *representation of an empty position* on the board.
 
 ```ruby
   BOARD_MAX_INDEX = 2
   EMPTY_POS = ' '
 ```
-The `initialize` method is used to set up each new Board object. It takes the representation of the `starting_player` as an argument.
 
+The `initialize` method is used to set up each new Board object. It takes the representation of the `starting_player` as an argument.
 ```ruby
   def initialize(starting_player)
     # implement
   end
 ```
 
-The d
-
+The `display` method is used to have the Board draw itself. 
 ```ruby
   def display
     # implement
   end
+```
+An empty board is drawn as follows
+```
++- - - - - -+
+| 1 | 2 | 3 | 
++- - - - - -+
+| 4 | 5 | 6 | 
++- - - - - -+
+| 7 | 8 | 9 | 
++- - - - - -+
+```
+and a board where the two players (assuming the players are represented as 'O' and 'X') have each taken one turn is draw as follows
+```
++- - - - - -+
+| 1 | 2 | O | 
++- - - - - -+
+| 4 | X | 6 | 
++- - - - - -+
+| 7 | 8 | 9 | 
++- - - - - -+
+```
 
+The `board_full` method returns `true` if there are no more empty positions and `false` otherwise.
+```ruby
   def board_full
     # implement
   end
+```
 
+The `winner` method returns `true` if one of the players has constructed a winning combination of 3 consecutive positions and `false` otherwise. Since a winning sequence can be vertical, horizontal, or diagonal, the method calls (is decomposed into) the methods `winner_cols`, `winner_rows`, and `winner_diagonals`.
+```ruby
   def winner
     # implement
   end
@@ -103,11 +128,17 @@ The d
   def winner_diagonals
     # implement
   end
+```
 
+The `validate_position` method returns `true` if the position represented by the arguments `row` and `col` is valid for the 3x3 board and `false` otherwise.
+```ruby
   def validate_position(row, col)
     # implement
   end
+```
 
+The `fill_position` method fills the position represented by the arguments `row` and `col`, if it is __valid__, for the player represented by the `player` argument. _Note: The method does not loop._
+```ruby
   def fill_position(row, col, player)
     # implement
   end
