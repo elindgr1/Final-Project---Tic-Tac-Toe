@@ -63,6 +63,8 @@ Implement a 2-player tictactoe game on a 3x3 board drawn in ASCII, where players
 
 ##### class Board
 
+The Board class is implemented in _board.rb_.
+
 The Board class represents the 3x3 board and implements all board-related methods in tictactoe. You are given the following two constants which you should use in your code. The first one indicates the largest index on a 3x3 board (remember that Ruby is *0-indexed*). The other is the *representation of an empty position* on the board. The Board is represented internally as a two-dimensional nexted array.
 
 ```ruby
@@ -111,7 +113,7 @@ The `board_full` method returns `true` if there are no more empty positions and 
   end
 ```
 
-The `winner` method returns `true` if one of the players has constructed a winning combination of 3 consecutive positions and `false` otherwise. Since a winning sequence can be vertical, horizontal, or diagonal, the method calls (is decomposed into) the methods `winner_cols`, `winner_rows`, and `winner_diagonals`.
+The `winner` method returns `true` if one of the players has constructed a winning combination of 3 consecutive positions and `false` otherwise. Since a winning sequence can be vertical, horizontal, or diagonal, the method calls (is decomposed into) the methods `winner_cols`, `winner_rows`, and `winner_diagonals`. The `winner` method returns the representation of one of the players, if there is a winner, and `nil` otherwise. _Note: Make sure you remember this when implementing the client of this method.
 ```ruby
   def winner
     # implement
@@ -130,14 +132,14 @@ The `winner` method returns `true` if one of the players has constructed a winni
   end
 ```
 
-The `validate_position` method returns `true` if the position represented by the arguments `row` and `col` is valid for the 3x3 board and `false` otherwise. A _negative, zero, or empty_ position is __invalid__.
+The `validate_position` method returns `true` if the position represented by the arguments `row` and `col` is empty and valid for the 3x3 board and `false` otherwise. A _negative, zero, or empty_ position is __invalid__. It should return `Position occupied!` if the position is non-empty and `Invalid position!` if the position is invalid. The method does __not__ loop.
 ```ruby
   def validate_position(row, col)
     # implement
   end
 ```
 
-The `fill_position` method fills the position represented by the arguments `row` and `col`, if it is __valid__, for the player represented by the `player` argument. _Note: The method does not loop._
+The `fill_position` method fills the position represented by the arguments `row` and `col`, if it is __valid__, for the player represented by the `player` argument. The method does __not__ loop.
 ```ruby
   def fill_position(row, col, player)
     # implement
@@ -145,6 +147,8 @@ The `fill_position` method fills the position represented by the arguments `row`
 ```
 
 ##### class Game
+
+The Game class is implemented in _game.rb_.
 
 The Game class represents (the playing) of one game of tictactoe, using the Board class for all the board-related methods. It implements all the game-related methods, notably the interaction with the two players. The following constant array represents the players.
 ```ruby
@@ -158,21 +162,28 @@ The `initialize` method is used to set up each new `Game` object. It takes the r
   end
 ```
 
-The `play` method does all the work of playing one game of tictactoe. It should open the game with `'Starting tic-tac-toe...'`. It should ask the current player where to play. It should conclude the game with `'Player [player] wins.'` a
+The `play` method does all the work of playing one game of tictactoe. It should open the game with `Starting tic-tac-toe...`. It should ask the current player where to play. It should call the game with `Player [player] wins.` (using string interpolation) or 'Tie game.' (if the game is tied). Finally, it should conclude every game with `Game over.`.
 
 ```ruby
   def play
     # implement
   end
 ```
+
+The `ask_player_for_move` loops until it gets a valid move from the current player, asking `Player [player]: Where would you like to play?` (using string interpolation). Delegate to the corresponding `Board` method.
 ```ruby
   def ask_player_for_move
     # implement
   end
 ```
+
+The `next_player` should alternate the current player, but only when the current player has completed a valid move and the game hasn't ended.
 ```ruby
   def next_player
     # implement
   end
 ```
 
+##### The tictactoe.rb file
+
+There is nothing to implement in the _tictactoe.rb_ file. It just creates a new `Game` and calls its `play` method.
