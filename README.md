@@ -37,7 +37,7 @@ The assignment is due on **Sun, Dec 4, at 23:55 Mountain time**. The last commit
 
 ### Honor code
 
-Free Github repositories are public so you can look at each other's code. Please, don't do that. You can discuss any programming topics and the assignments in general but sharing of solutions diminishes the individual learning experience of many people. Assignments might be randomly checked for plagiarism and a plagiarism claim may be raised against you.
+You need to use public Github repositories so will be able to look at each other's code. Please, __don't__. You can discuss any programming topics and the assignments in general but sharing solutions diminishes the individual learning experience of others. Assignments might be randomly checked for plagiarism and a plagiarism claim may be raised against you.
 
 You can share all code and solutions within your team, of course.
 
