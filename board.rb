@@ -3,7 +3,7 @@ class Board
   BOARD_MAX_INDEX = 2
   EMPTY_POS = ' '
 
-  def initialize(current_player)
+  def initialize(starting_player)
     # implement
   end
 
