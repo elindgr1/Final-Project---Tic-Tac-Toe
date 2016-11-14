@@ -23,7 +23,7 @@ __Note: IN PROGRESS__
 
 ### Submission
 
-You need to submit on the course's chosen learning management system the _url_ of your remote Github repository by the assignment deadline. 
+You need to submit on the course's chosen learning management system the _URL_ of your remote Github repository by the assignment deadline. 
 
 Once you fork the repository (this is your **remote** repository on Github, aka **origin**), you will clone it to your development machine (this is your local repository), and start work on it. Commit your changes to your local repository often and push them up to the remote repository occasionally. Make sure you push at least once before the due date. At the due date, your remote repository will be cloned and tested automatically by the grading script. _**Note:** Your code should be in the **master** branch of your remote repository._
 
@@ -55,13 +55,60 @@ You are expected to use [RubyMine](https://www.jetbrains.com/ruby/) to develop t
 
 ### Detailed Instructions
 
-#### Prerequisites
-
-
-
 #### Overall goal
 
-
+Implement a 2-player tictactoe game on a 3x3 board drawn in ASCII, where players take turns until the game is won by one of the players or the board is full and the game is a tie.
 
 #### API Functions
 
+##### class Board
+
+The Board class represents the 3x3 board and implements all board-related methods in tictactoe. You are given the following two constants which you should use in your code.
+
+```ruby
+  BOARD_MAX_INDEX = 2
+  EMPTY_POS = ' '
+```
+The `initialize` method is used to set up each new Board object. It takes the representation of the `starting_player` as an argument.
+
+```ruby
+  def initialize(starting_player)
+    # implement
+  end
+```
+
+The d
+
+```ruby
+  def display
+    # implement
+  end
+
+  def board_full
+    # implement
+  end
+
+  def winner
+    # implement
+  end
+
+  def winner_cols
+    # implement
+  end
+
+  def winner_rows
+    # implement
+  end
+
+  def winner_diagonals
+    # implement
+  end
+
+  def validate_position(row, col)
+    # implement
+  end
+
+  def fill_position(row, col, player)
+    # implement
+  end
+```
