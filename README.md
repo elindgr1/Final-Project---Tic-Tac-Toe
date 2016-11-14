@@ -4,10 +4,6 @@ _(Tic-Tac-Toe with Ruby)_
 
 * * *
 
-__Note: IN PROGRESS__
-
-* * * 
-
 ### Goals
 
 1. Integrate the elements of the Ruby programming language you learned in the tutorial.
